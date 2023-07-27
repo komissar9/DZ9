@@ -48,7 +48,7 @@ if (m > 0 && n > 0)
         if (n == 0) return akkerman(m - 1, 1);
         else return akkerman(m - 1, akkerman(m, n - 1));
     }
-    Console.Write($"Функция Аккермана равно {akkerman(m, n)}");
+    Console.Write($"Функция Аккермана равна {akkerman(m, n)}");
 }
 else 
 {
