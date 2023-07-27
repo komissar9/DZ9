@@ -10,20 +10,47 @@
 // Console.WriteLine($"Числа от {n} до 1: {PrintNumbers(n, 1)}");
 
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N
+// Console.Write("Введите число M: ");
+// int userM = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число N: ");
+// int userN = Convert.ToInt32(Console.ReadLine());
+// int copyN = userN + 1;
+// if (userM < copyN)
+// {
+
+//     int SumNumbers(int M, int N)
+//     {
+
+//         if (M == N) return 0;
+//         else
+//         {
+//             return M + SumNumbers(M + 1, N);
+//         }
+//     }
+//     Console.WriteLine($"Cумма чисел в промежутке от {userM} до {userN}: {SumNumbers(userM, copyN)}");
+
+// }
+// else
+// {
+//     Console.WriteLine("Число M должно быть меньше числа N");
+// }
+
+// Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 Console.Write("Введите число M: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число N: ");
 int n = Convert.ToInt32(Console.ReadLine());
-int copyN = n + 1;
-int SumNumbers(int m, int copyN)
+if (m > 0 && n > 0)
 {
-    if (m == copyN) return 0;
-    else
+    int akkerman(int m, int n)
     {
-        return m + SumNumbers(m + 1, copyN);
+        if (m == 0) return n + 1;
+        if (n == 0) return akkerman(m - 1, 1);
+        else return akkerman(m - 1, akkerman(m, n - 1));
     }
+    Console.Write($"Функция Аккермана равно {akkerman(m, n)}");
 }
-Console.WriteLine($"Cумма чисел в промежутке от {m} до {n}: {SumNumbers(m, copyN)}");
-
-
-// Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+else 
+{
+    Console.WriteLine("Есть отрицательные числа");
+}
